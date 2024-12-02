@@ -2,7 +2,7 @@
 $repoZipUrl = "https://github.com/we-dcode/HeadlessMcAfeeNuker/releases/download/v1.0.0/mcafee_killer.zip"
 $localZipPath = "C:\temp\mcafee_killer.zip"
 $repoUnzippedPath = "C:\temp\mcafee_killer\MCPR"  
-$cleanupExe = "mccleanup.exe"  # Fixed cleanup tool path
+$cleanupExe = "mccleanup.exe"
 
 # Function to download a file
 function Download-File {
