@@ -1,8 +1,8 @@
 # Define variables
 $repoZipUrl = "https://github.com/we-dcode/HeadlessMcAfeeNuker/releases/download/v1.0.0/mcafee_killer.zip"
-$localZipPath = "C:\Temp\mcafee_killer.zip"
-$repoUnzippedPath = "C:\Temp\mcafee_killer.zip"
-$cleanupExe = "mccleanup.exe"
+$localZipPath = "C:\temp\mcafee_killer.zip"
+$repoUnzippedPath = "C:\temp\mcafee_killer\MCPR"  
+$cleanupExe = "mccleanup.exe"  # Fixed cleanup tool path
 
 # Function to download a file
 function Download-File {
@@ -48,7 +48,7 @@ $cleanupToolPath = Join-Path -Path $repoUnzippedPath -ChildPath $cleanupExe
 
 if (Test-Path -Path $cleanupToolPath) {
     Write-Host "Running McAfee cleanup tool..."
-    Start-Process -FilePath $cleanupToolPath -ArgumentList "-p StopServices,MFSY,PEF,MXD,CSP,Sustainability,MOCP,MFP,APPSTATS,Auth,EMProxy,FWDriver,HW,MAS,MAT,MBK,MCPR,McProxy,McSvcHost,VUL,MHN,MNA,MOBK,MPF,MPFPCU,MPS,SHRED,MPSCU,MQC,MQCCU,MSAD,MSHR,MSK,MSKCU,MWL,NMC,RedirSvc,VS,Remediation,MSC,YAP,TrueKey,LAM,PCB,Symlink,SafeConnect,MGS,WMIRemover,RESIDUE -v -s" -NoNewWindow -Wait -Verb RunAs
+    & $cleanupToolPath -p StopServices,MFSY,PEF,MXD,CSP,Sustainability,MOCP,MFP,APPSTATS,Auth,EMProxy,FWDriver,HW,MAS,MAT,MBK,MCPR,McProxy,McSvcHost,VUL,MHN,MNA,MOBK,MPF,MPFPCU,MPS,SHRED,MPSCU,MQC,MQCCU,MSAD,MSHR,MSK,MSKCU,MWL,NMC,RedirSvc,VS,Remediation,MSC,YAP,TrueKey,LAM,PCB,Symlink,SafeConnect,MGS,WMIRemover,RESIDUE -v -s
     Write-Host "McAfee cleanup completed successfully."
 } else {
     Write-Host "Cleanup tool not found at $cleanupToolPath."
