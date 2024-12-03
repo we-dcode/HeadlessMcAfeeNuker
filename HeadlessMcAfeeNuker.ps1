@@ -1,7 +1,7 @@
 # Define variables
 $repoZipUrl = "https://github.com/we-dcode/HeadlessMcAfeeNuker/releases/download/v1.0.0/mcafee_killer.zip"
-$localZipPath = "C:\temp\mcafee_killer.zip"
-$repoUnzippedPath = "C:\temp\mcafee_killer\MCPR"  
+$localZipPath = "C:\Windows\Temp\mcafee_killer.zip"
+$repoUnzippedPath = "C:\Windows\Temp\mcafee_killer\MCPR"  
 $cleanupExe = "mccleanup.exe"
 
 # Function to download a file
